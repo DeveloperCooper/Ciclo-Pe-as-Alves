@@ -1,0 +1,864 @@
+/* Variáveis */
+
+:root {
+    --ff-primary: "Cairo", sans-serif;
+
+    --spacing: 0.25rem;
+    --transition: all 0.2s linear;
+    --dark-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.56);
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
+
+html {
+    font-size: 62.5%; 
+    /*
+    O rem a 62.5% deixa a unidade 'px' a 10px e não 16 px como padrão,
+    facilitando o trabalho da montagem do site em questão de medidas
+    */
+}
+
+body {
+    font-family: var(--ff-primary); /* Coloca a fonte-family do site inteiro que está no :root */
+    background-color: white; /* Cor de fundo do body */
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+section {
+    min-width: 37rem;
+    padding: 1.6rem;
+}
+
+@media screen and (min-width: 1170px) {
+    section {
+        padding: 1.6rem calc((100% - 117rem - 1.6rem) / 2);
+
+    }
+}
+
+img { /* Permite que as imagens sejam responsivas */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Tira o pequeno espaçamento entre as imagens */
+}
+
+/* Navbar */
+
+.navbar { /* Navbar total */
+    position: fixed; /* Deixa a navbar sempre fixa no topo */
+    background: black; /* Cor de fundo da navbar */
+    width: 100%; /* Determina que a largura da navbar irá ser de 100% do documento */
+    padding: 1.6rem; /* Espaçamento dos cantos da navbar, não a-deixando totalmente nas laterais */
+    box-shadow: var(--dark-shadow); /* Sombra ao redor da navbar */
+    z-index: 3; /* Z-index para os textos do vídeo, na tag "content-video" */
+}
+
+.navbar-header { /* Logo e hamburger */
+    display: flex; /* Alinhou os elementos entre si */
+    justify-content: space-between; /* Coloca cada elemento em um canto da tela */
+    align-items: center; /* Alinha todos ao centro */
+}
+
+.navbar-button { /* Botão menu hamburger */
+    background: transparent; /* Deixa o fundo do ícone transparente */
+    border: transparent; /* Deixa as bordas do ícone transparente */
+    color: white; /* Coloca a cor do ícone de branco */
+    font-size: 3.2rem; /* Tamanho do ícone */
+    cursor: pointer; /* Personaliza o ponteiro quando alguém passa o mouse por cima */
+    transition: var(--transition); /* Coloca a transição da variável */
+}
+
+.navbar-button:hover { /* Menu hamburger 'hover' */
+    transform: scale(1.2); /* Aumenta de tamanho a escala do hamburger ao passar o mouse por cima */
+}
+
+.navbar-list {
+    height: 0; /* Essa tag 'height: 0' foi para separar a lista da navbar, sendo assim então, ele ultrapassou a navbar */
+    overflow: hidden; /* Essa tag faz com que, se o elemento for maior que sua tag pai, ou seja, 'navbar', ela o esconde */
+    transition: var(--transition); /* Transição da lista */
+    letter-spacing: .14rem;
+}
+
+.navbar-list--show-links{ /* Esse é um modificador, portando '--' em seu nome, ele irá ser usado para quando uma pessoa apertar no menu hamburger a lista aparecer */
+    height: 25rem;
+}
+
+.navbar-links { /* Botões da navbar */
+    display: block; /* Com esse display os botões só ocupam o espaço necessário, não deixando-os totalmente juntos */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    font-weight: 900; /* Peso da fonte */
+    padding: 1.6rem; /* Coloca um espaçamento nos elementos para não ficarem muito juntos */
+    text-transform: uppercase; /* Coloca todas as letras iniciando em letras maiúsculas */
+    color: white; /* Cor das letras */
+    transition: var(--transition); /* Transição do botão */
+    text-decoration: none;
+}
+
+.navbar-links:hover { /* Botões do hamburger 'hover' */
+    background: orangered; /* Cor de fundo ao passar o mouse no menu hamburger */
+    padding-left: 3.6rem; /* Coloca os elementos mais a frente como uma animação ao passar o mouse */
+}
+
+.navbar-logo {
+    width: 13rem; /* Tamanho do ícone */
+    padding: 0.4rem; /* Distancia dos quatro lados da barra */
+    margin-left: 3rem; /* Distancia do canto esquerdo */
+}
+
+.navbar-icons {
+    display: none; /* Esconde os ícones */
+}
+
+@media screen and (min-width: 992px) { /* Tudo que estiver nesse bloco, só irá funcionar em telas maiores que 992px */
+
+.navbar-button {
+    display: none; /* Esconde o botão hamburger para telas maiores */
+}
+
+.navbar-list {
+    height: auto; /* Redefine o height de '0' para 'auto' para aparecer a lista do menu */
+    display: flex; /* Display flex para colocar os elementos um ao lado do outro */
+}
+
+ .navbar {
+    display: flex; /* Transformou tudo o que tem na navbar em flex, colocando assim então os elementos um ao lado do outro */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinhamento dos itens ao centro */
+    padding: .8rem 1.6rem; /* Tamanho da navbar // .8 superior e inferior; 1.6 esquerda e direita */
+ }
+
+ .navbar-links:hover {
+    background: none; /* Tirou a cor verde de fundo dos links */
+    padding: 1.6rem; /* Tirou a animação ao passar o mouse por cima */
+    color: orangered;
+ }
+
+ .navbar-icons {
+    display: flex; /* Não deixa mais os ícones escondidos, deixando-os um ao lado do outro */
+    margin-right: 3rem; /* Distancia do canto direito */
+ }
+
+ .navbar-icon {
+    margin-right: 2.2rem; /* Margem a direita dos ícones */
+    color: white; /* Cor dos ícones */
+    font-size: 2.5rem; /* Tamanho dos ícones */
+    font-weight: 900; /* Peso dos ícones */
+    transition: var(--transition); /* Transição suave ao mudar a cor quando passa o mouse */
+ }
+
+ .navbar-icon:hover {
+    color: orangered; /* Cor ao passar o mouse por cima */
+ }
+
+}
+
+@media screen and (min-width: 1170px) {
+    .navbar {
+        padding: .8rem calc((100% - 117rem - 1.6rem) / 2);
+    }
+}
+
+/* Content */
+
+.content {
+    position: relative; /* Nesse caso, a posição relativa será usada nos elementos de escrita */
+    min-height: 100vh; /* Define o vídeo como 100% da viewport, então independente da resolução da tela, ela sempre vai se ajustar á tela. */
+    display: flex; /* Torna todos os ítens flex */
+    align-items: center; /* Alinha todos os conteúdos ao centro */ 
+    background-color: rgba(0, 0, 0, 0.493); /* Background para deixar o wallpaper mais escuro */
+}
+
+.content-wallpaper {
+    position: absolute;
+    width: 100%; /* 100% de largura */
+    height: 100%; /* 100% de altura */
+    object-fit: cover; /* Esse elemento faz com que o o vídeo se ajuste em qualquer tela */
+    z-index: -1; /* Essa propriedade coloca o item para trás, ou seja, deixando que a navbar apareça normalmente */
+    /* Mais acima, em ".navbar" foi colocar 'z-index: 3' para que os textos não fiquem escondidos juntos do vídeo*/
+}
+
+.content-texts {
+    min-width: 37rem; /* Tamanho mínimo da fonte */
+    padding: 2.2rem;
+}
+
+.content-title {
+    font-size: 5.2rem;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+}
+
+.content-description {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
+    max-width: 57rem; /* Tamanho máximo da fonte */
+    margin: 1rem 0; /* Alinhou os itens verticalmente */
+}
+
+.content-cta {
+    display: block; 
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    width: 37rem;
+    background-color: black;
+    border-radius: .5rem; /* Bordas arredondadas */
+    padding: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.content-cta:hover {
+    letter-spacing: .7rem;
+    color: orangered;
+    background-color: rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 960px) { /* Tudo que estiver nesse bloco, só irá funcionar em telas maiores que 960px */
+    .content-texts {
+        font-size: 7.2rem;
+    }
+
+    .content-title-2 {
+        font-size: 6.4rem;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .content-texts {
+        padding: 1.6rem calc((100% - 117rem - 1.6rem) / 2); /* Deixa os textos alinhados com resoluções maiores que 1170px */
+        /*
+        100% -> 1920px
+        1920 - 1170px = 750px
+        750 / 2 = 375px
+        375px seria o padding dos textos, os deixando sempre centralizados
+        */
+    }
+}
+
+/* About */
+
+#about {
+    background-color: rgb(12, 12, 12); /* Background de fundo */
+    color: white; /* Cor das letras */
+}
+
+.about-title {
+    font-size: 4.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    text-align: center;
+    color: white;
+}
+
+.about-img {
+    max-width: 100%; /* Tamanho máximo da imagem */
+    height: auto; /* Altura automática, se ajustando com a página */
+}
+
+.about-texts {
+    margin-top: 1.2rem;
+}
+
+.about-texts-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .8rem;
+}
+
+.about-title-2 {
+    color: orangered;
+}
+
+@media screen and (min-width: 768px) {
+    .about-content {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens possam se quebrar em várias linhas */
+        align-items: center;
+    }
+
+    .about-texts {
+        flex: 6 1 1rem;
+        margin-left: 2.8rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-content {
+        text-align: center;
+    }
+}
+
+/* Differentials */
+
+#differentials {
+    background-image: linear-gradient(to right, rgba(255, 68, 0, 0.932), rgba(255, 68, 0, 0.932)), url('../Assets/bike.jpg'); /* Imagem de fundo com sobreposição de cor */
+    background-size: cover, contain; /* Define o tamanho da imagem */
+    background-position: center, right bottom; /* A posição da imagem */
+    color: white; /* A cor geral dos textos */
+}
+
+.differentials {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens possam se quebrar em várias linhas */
+    justify-content: center; /* Colocou o conteúdo centralizado ao centro */
+    margin: 0 15rem; /* Alinhou verticalmente o conteúdo */
+}
+
+.differential + .differential {
+    margin-top: 1.6rem;
+}
+
+.differentials-title {
+    font-size: 4.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.differential-title {
+    font-size: 2.4rem;
+    font-weight: 400; /* Peso da fonte */
+    text-transform: uppercase; /* Texto em maiúsculo */
+    display: flex; /* Separou os itens, não os deixando grudado aos outros */
+    align-items: center;
+}
+
+.differential-description {
+    width: 28.8rem; /* Tamanho do espaço permitido do texto */
+}
+
+.differential-title::before {
+    content: "";
+    background: black; /* Cor de fundo do ícone */
+    color: white; /* Cor do ícone */
+    padding: 1rem; /* Tamanho da box do ícone */
+    margin-right: .8rem;
+    font-family: "Font Awesome 5 Free"; /* Para que o ícone apareça, é preciso colocar essa fonte */
+    font-weight: 900; /* E também é necessário colocar esse peso na fonte */
+    font-size: 3.6rem; /* Tamanho do texto */
+}
+
+.differential-wallet::before { /* ícone da carteira */
+    content: "\f555";
+}
+
+.differential-local::before { /* ícone do mapa */
+    content: "\f5a0";
+}
+
+.differential-service::before { /* ícone do joia */
+    content: "\f164";
+}
+
+@media screen and (min-width: 625px) { /* Essas regras só funcionarão para telas maiores que 625px */
+    .differentials {
+        justify-content: space-between; /* Espaço entre os elementos, não os-deixando centralizado em telas maiores */
+        margin: auto; /* Margem automática para telas maiores, em telas menores está '0 15rem' */
+    }
+
+    .differential + .differential {
+        margin-top: 0; /* Em telas menores o 'margin-top' estava em 1.6rem, mudando agora para 0, para melhor adaptação da tela */
+    }
+}
+
+/* Packages */
+
+#packages {
+    background-color: rgb(12, 12, 12); /* Background de fundo */
+    color: white; /* Cor das letras */
+}
+
+.packages {
+    display: flex;
+    position: relative; /* Colocamos posição relativa aqui, para que a posição absoluta da seta abaixo funcione */
+    overflow-x: auto; /* A barra de rolagem irá funcionar somente no '.packages', não deixando a página inteira se mexer */
+}
+
+.packages::after {
+    content: "→"; /* Adiciona algo que você queira, como um símbolo */
+    position: absolute; /* Posição absoluta para que seja diferente de 'relative' acima, para que a seta funcione relativa à 'nossas bicicletas' e não a navbar */
+    font-size: 3.6rem;
+    font-weight: 900;
+    color: orangered;
+    top: .5rem;
+    right: 5.2rem;
+    animation: arrow .5s ease-in 0s infinite alternate; /* Define que a animação é na seta, no comando abaixo */
+}
+
+@keyframes arrow { /* Essa é a animação da seta */
+    from {
+        right: 5.2rem;
+    }
+    
+    to {
+        right: 3.2rem;
+    }
+}
+
+.package {
+    flex-shrink: 0; /* Faz com que os itens não se exprimam, cada um tendo seu espaço */
+    background: rgb(0, 0, 0);
+    max-width: 37rem;
+    cursor: pointer;
+    color: orangered;
+}
+
+.package + .package {
+    margin-left: 3rem; /* Separa os elementos um do outro */
+}
+
+.package-thumbnail {
+    max-width: 37rem;
+}
+
+.package-info {
+    padding: 1.6rem;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between; /* Espaço entre 'bicicleta aro xx' e 'Masculino' */
+    align-items: center; /* Alinha os itens horizontalmente */
+}
+
+.info-header-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-bottom: 2px solid orangered;
+}
+
+.info-header-gender {
+    text-transform: uppercase;
+    color: white;
+    border-bottom: 2px solid orangered;
+}
+
+.info-body {
+    margin: 1.6rem 0;
+    text-align: center;
+    color: white;
+}
+
+.price {
+    font-size: 3rem;
+}
+
+.info-footer {
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-number {
+    font-size: .9rem;
+}
+
+@media screen and (min-width: 805px) {
+    .packages {
+        flex-wrap: wrap; /* Diz que os itens podem quebrar linhas */
+        justify-content: space-around; /* Permite que os itens tenhas espaços entre si */
+        overflow: visible; /* Retira o overflow anteriormente, colocando como padrão */
+        padding-bottom: 3.2rem; /* Espaçamento inferior para que desgrude de baixo */
+    }
+
+    .package {
+        transition: var(--transition); /* Animação suave ao passar o mouse */
+    }
+
+    .package:hover {
+        transform: scale(1.02); /* Muda o tamanho da box ao passar o mouse */
+    }
+
+    .packages::after {
+        content: "";
+    }
+
+    .package + .package {
+        margin: 0; /* Deixa os itens alinhados, eliminando o comando anterior de 'margin-left: 3rem */
+    }
+
+    .package:nth-child(n+3){ /* Define que o espaçamento inferior irá funcionar somente a partir do 3º item */
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .package:nth-child(3) { /* Para telas maiores que 1150px, irá desbugar o alinhamento dos itens na margin-top, os deixando alinhados */
+        margin-top: 0;
+    }
+}
+
+/* NewsLetter */
+
+#newsletter {
+    background-image: linear-gradient(to right, rgba(255, 68, 0, 0.932), rgba(255, 68, 0, 0.932)), url('../Assets/bike.jpg'); /* Imagem de fundo com sobreposição de cor */
+    background-size: cover, contain; /* Define o tamanho da imagem */
+    background-position: center, right bottom; /* A posição da imagem */
+    color: white; /* A cor geral dos textos */
+}
+
+.newsletter-c {
+    padding: 4rem 0; /* Superior e inferior 4rem, esquerda e direita 0 */
+}
+
+.newsletter-info-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+.newsletter-info-description {
+    font-weight: 300;
+    font-size: 2.4rem;
+    font-style: italic; /* Fonte mais 'deitada' */
+    line-height: 1.2;
+    margin: .8rem 0; /* Margem superior e inferior .8rem, esquerda e direita 0 */
+}
+
+.newsletter-form-input {
+    flex: 3 1 37rem; /* 3: input deve ser 3x maior que o botão; 1: que ele pode reduzir seu tamanho para caber no flex-container; 37rem: seu tamanho mínimo vai ser de 37rem */
+    font-size: 1.8rem; /* Tamanho da fonte da caixa de texto */
+    height: 6rem; /* Tamanho da caixa de texto */
+    color: black;
+    border: none; /* Sem borda */
+    padding: 1rem; /* Desgrudou o texto do canto esquerdo */
+    border-radius: 0; /* border-radius 0; por que em alguns navegadores eles arredondam a borda por padrão */
+}
+
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newsletter-form-submit {
+    flex: 1; /* flex: 1 1 0; Diz que o botão deve preencher todo o espaço disponível // que ele pode diminuir seu tamanho para caber no flex-container // que seu tamanho mínimo vai ser o tamanho do seu conteúdo */
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    letter-spacing: .2rem;
+    transition: var(--transition);
+    text-align: center;
+    width: 24rem;
+    border: none;
+    padding: 1.6rem;
+}
+
+.newsletter-form-submit:hover {
+    letter-spacing: .5rem;
+    color: orangered;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 570px) {
+    .newsletter-c {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens se quebrem em outras linhas */
+        justify-content: space-between; /* Espaço entre os itens */
+        align-items: center; /* Alinha os itens ao centro */
+    }
+
+    .newsletter-info, .newsletter-form { /* Essa regra vale para os dois blocos */
+        flex: 1 1 26rem; /* Ambos devem dividir igualmente o espaço disponível // podem reduzir seu tamanho para caber no flex-container // tamanho mínimo é 26rem */
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .newsletter-form-input {
+        flex: 1; /* Diz que o input deve preencher todo o espaço disponível */
+        height: auto; /* Altura automática para acompanhar a altura do botão */
+        margin-right: 1.5rem; /* Distanciamento entre eles */
+    }
+
+    .newsletter-form-submit {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .newsletter-form-input {
+        flex: 3; /* flex: 2 1 0 // flex:2 fez o campo input ocupar mais espaço em telas maiores */
+    }
+}
+
+/* Gallery */
+
+.gallery {
+    padding: 0; /* Tirou os espaçamentos ao redor dos elementos */
+}
+
+.gallery-item {
+    position: relative; /* Posição relativa para poder criar o background ao passar o mouse */
+    min-width: 17rem;
+    cursor: pointer;
+    overflow: hidden; /* Esse elemento diz que não devem ser exibidas as partes do elemento filho que ultrapasse o tamanho do elemento pai */
+}
+
+.gallery-thumbnail {
+    transition: var(--transition);
+}
+
+.gallery-item::before {
+    content: ""; /* Content vazio para mostrar que ele existe no elemento */
+    position: absolute;
+    background: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.gallery-text {
+    position: absolute;
+    font-size: 2.4rem;
+    font-weight: 600;
+    left: 6.4rem;
+    bottom: 3.2rem;
+    color: orangered;
+    opacity: 0;
+    z-index: 2; /* Colocou o texto a frente da imagem para não desaparecer */
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-thumbnail { 
+    transform: scale(1.2); /* Ao passar o mouse por cima da imagem a imagem irá crescer */
+}
+
+.gallery-item:hover .gallery-text { /* Aqui deve-se colocar espaço pois não são a mesma class */
+    left: 3.2rem; /* Ao passar o mouse na imagem o texto irá aparecer se animando para a esquerda */
+    opacity: 1;
+}
+
+.gallery-item:hover.gallery-item::before { /* Nesse elemento não há espaço pois são a mesma class, portanto só funcionará se forem colocados juntos */
+    opacity: .7;
+}
+
+@media screen and (min-width: 768px) {
+    .gallery {
+        display: flex; /* Em telas maiores ele colocou os itens lado a lado */
+        flex-wrap: wrap; /* Porém o flex-wrap disse que pode ter quebra de linhas */
+    }
+
+    .gallery-item {
+        flex: 0 0 50%; /* Essa tag impede que as imagens cresçam ou diminuam, definindo seu tamanho como 50% da largura da página */
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .gallery {
+        justify-content: center;
+    }
+
+    .gallery-item {
+        flex: 0 0 33%;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background: rgb(31, 31, 31); /* Cor de fundo da sessão */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    font-weight: 900; /* Peso da fonte */
+    text-align: center; /* Alinhamento ao centro */
+    text-transform: capitalize; /* Letra inicial maiúscula */
+    padding: 7.2rem 0; /* 7.2rem superior e inferior // 0 esquerda e direita */
+}
+
+.footer-list, .footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    color: white;
+    padding: 1.6rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: orangered;
+}
+
+.footer-icons {
+    margin: 3.2rem 0;
+}
+
+.footer-icon {
+    margin-right: 1.6rem;
+    color: rgb(255, 255, 255);
+    font-size: 2.8rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-icon:hover {
+    color: orangered;
+}
+
+.direitos {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.copyright {
+    color: white;
+}
+
+@media screen and (min-width: 580px) {
+    .footer {
+        font-size: 1.6rem;
+    }
+
+    .direitos {
+        color: white;
+        display: inline;
+        justify-content: center;
+    }
+}
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    justify-content: center; /* alinhamento Horizontal */
+    align-items: center; /* alinhamento Vertical */
+    padding: 1.6rem; /* Espaçamento laterais da imagem */
+    z-index: 4; /* Pode ficar na frente até mesmo da navbar */
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2.4rem;
+    padding: 1.6rem;
+    color: orangered;
+    cursor: pointer;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider-number {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 1.4rem;
+    padding: .2rem;
+    margin-left: .6rem;
+    margin-top: .6rem;
+}
+
+.slider-buttons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: orangered;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Itens flexiveis, ao lado do outro */
+    justify-content: space-between; /* Espaço para cada um ficar de um canto da imagem */
+}
+
+.button-left, .button-right { /* Setas de troca de imagem */
+    font-size: 2.4rem;
+    padding: 1.6rem; /* Distanciamento das bordas */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.slider-image-description {
+    background-color: black;
+    text-align: center;
+}
+
+.slider-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.slider-thumbs-img {
+    position: relative;
+    flex: 0 0 25%; /* Impede que o elemento cresça e diminua, e que seu tamanho seja de 25% */
+    cursor: pointer;
+}
+
+.slider-thumbs-img::before {
+    content: "";
+    position: absolute;
+    background: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    transition: var(--transition);
+}
+
+.slider-thumbs-img:hover.slider-thumbs-img::before { /* Como são o mesmo elemento, devem ficar colados */
+    opacity: 0;
+
+}
+
+.slider-thumbs-img--active.slider-thumbs-img::before {
+    opacity: 0;
+}
+
+@media screen and (min-width: 648px) {
+    .modal {
+        padding: 5.6rem; /* Impede que o botão 'x' seja escondido em telas maiores */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        padding: 1.6rem;
+    }
+
+    .slider-thumbs-img {
+        flex: 1;
+        max-width: 10rem;
+    }
+}

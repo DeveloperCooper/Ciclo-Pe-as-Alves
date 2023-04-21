@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeShop</title>
+
+    <!-- Fonte e ícones-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!--FavIcon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+</head>
+
+<body>
+    <header id="home"> <!--esse ID tem o nome de home porque se conecta com o link 'home' da navbar-->
+        <nav class="navbar">
+            <div class="navbar-header">
+                <img src="./Assets/logotipo.png" alt="Logo" class="navbar-logo">
+                <button type="button" class="navbar-button"> <!--Esse é o menu hamburger para dispositivos menores-->
+                    <i class="fas fa-bars" class="navbar-hamburger"></i> <!--Ícone do menu hamburger-->
+                </button> <!--navbar-hamburger-->
+            </div><!--navbar-header-->
+
+            <ul class="navbar-list"> <!--Aqui se cria a lista de links da navbar-->
+                <li> <!--Aqui é um dos itens da lista da navbar-->
+                    <a href="#home" class="navbar-links">Home</a>
+                </li>
+                <li> <!--Aqui é um dos itens da lista da navbar-->
+                    <a href="#about" class="navbar-links">Sobre Nós</a>
+                </li>
+                <li> <!--Aqui é um dos itens da lista da navbar-->
+                    <a href="#differentials" class="navbar-links">Diferenciais</a>
+                </li>
+                <li> <!--Aqui é um dos itens da lista da navbar-->
+                    <a href="#packages" class="navbar-links">Pacotes</a>
+                </li>
+                <li> <!--Aqui é um dos itens da lista da navbar-->
+                    <a href="#gallery" class="navbar-links">Galeria</a>
+                </li>
+            </ul> <!--navbar-list-->
+
+            <ul class="navbar-icons">
+                <li>
+                    <a href="https://www.whatsapp.com" target="_blank" class="navbar-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" class="navbar-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav><!--navbar-->
+
+        <div class="content">
+            <img src="./Assets/wallpapper.jpg" class="content-wallpaper" alt="">
+            <div class="content-texts">
+                <h1 class="content-title">Aqui tem tudo <br> <span class="content-title-2">que o ciclista
+                        precisa!</span></h1>
+                <p class="content-description">Gastar com o que gosta e ainda concorrer a vários prêmios? Só na CICLO
+                    PEÇAS ALVES! <br> SORTEIOS TODOS OS MESES!</p>
+                <a href="#" class="content-cta">Explorar</a>
+            </div> <!--content-texts-->
+        </div> <!--content-->
+    </header> <!--home-->
+
+    <section id="about">
+        <h2 class="about-title">Sobre <span class="about-title-2">Nós</span></h2>
+        <div class="about-content">
+            <img src="./Assets/bicycle.jpg" alt="Sobre Nós" class="about-img">
+            <div class="about-texts">
+                <h3 class="about-texts-title">Nossa história até chegar aqui</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore a eos facere molestias dolores,
+                    doloribus necessitatibus deserunt eius modi itaque et aliquid, iste nisi quam exercitationem odio
+                    fugiat dicta assumenda.</p>
+                <br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem fuga voluptate culpa,
+                    consequatur minima ipsam, impedit voluptatibus exercitationem magnam autem neque, sunt dignissimos
+                    dolorum temporibus vero esse. Iusto, voluptates neque.</p>
+            </div> <!--about-texts-->
+        </div> <!--about-content-->
+    </section> <!--about-->
+
+    <section id="differentials">
+        <h2 class="differentials-title">Nossos diferenciais</h2>
+        <div class="differentials">
+            <article class="differential">
+                <h3 class="differential-title differential-wallet">O preço mais acessível</h3>
+                <p class="differential-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Praesentium aspernatur aliquid aliquam explicabo. Quasi, ipsum quos non sit praesentium veritatis
+                    illo facere veniam hic, harum iure animi amet velit maiores!</p>
+            </article>
+
+            <article class="differential">
+                <h3 class="differential-title differential-local">O local mais próximo de você</h3>
+                <p class="differential-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Praesentium aspernatur aliquid aliquam explicabo. Quasi, ipsum quos non sit praesentium veritatis
+                    illo facere veniam hic, harum iure animi amet velit maiores!</p>
+            </article>
+
+            <article class="differential">
+                <h3 class="differential-title differential-service">O melhor atendimento</h3>
+                <p class="differential-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Praesentium aspernatur aliquid aliquam explicabo. Quasi, ipsum quos non sit praesentium veritatis
+                    illo facere veniam hic, harum iure animi amet velit maiores!</p>
+            </article>
+        </div> <!--differentials CLASS-->
+    </section> <!--differentials ID-->
+
+    <section id="packages">
+        <!--Em títulos, geralmente é bom colocar um ID padrão para todos, para não ficar toda hora configurando no CSS sempre a mesma coisa-->
+        <h2 class="about-title">Nossas <span class="about-title-2">Bicicletas</span></h2>
+        <div class="packages">
+            <article class="package">
+                <img src="./Assets/bike-01.jpg" alt="Bicicleta aro 12" class="package-thumbnail">
+                <div class="package-info">
+                    <div class="info-header">
+                        <h3 class="info-header-title">Bicicleta aro 12</h3>
+                        <p class="info-header-gender">Masculino</p>
+                    </div> <!--info-header-->
+                    <p class="info-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, dolorem magnam, cumque voluptates eos odio iusto ex, at quibusdam in accusamus consequatur quis! Similique modi id quos corporis hic. Repudiandae!</p>
+                    <div class="info-footer">
+                        <span>
+                            0-4 anos
+                        </span>
+                        <p>A partir de R$ <span class="price">279</span><span class="small-number">,99</span></p>
+                    </div>
+                </div> <!--package-info-->
+            </article> <!--package-->
+
+            <article class="package">
+                <img src="./Assets/bike-02.png" alt="Bicicleta aro 16" class="package-thumbnail">
+                <div class="package-info">
+                    <div class="info-header">
+                        <h3 class="info-header-title">Bicicleta aro 16</h3>
+                        <p class="info-header-gender">Masculino</p>
+                    </div> <!--info-header-->
+                    <p class="info-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, dolorem magnam, cumque voluptates eos odio iusto ex, at quibusdam in accusamus consequatur quis! Similique modi id quos corporis hic. Repudiandae!</p>
+                    <div class="info-footer">
+                        <span>
+                            4-6 anos
+                        </span>
+                        <p>A partir de R$ <span class="price">589</span><span class="small-number">,99</span></p>
+                    </div>
+                </div> <!--package-info-->
+            </article> <!--package-->
+
+            <article class="package">
+                <img src="./Assets/bike-03.jpg" alt="Bicicleta aro 20" class="package-thumbnail">
+                <div class="package-info">
+                    <div class="info-header">
+                        <h3 class="info-header-title">Bicicleta aro 20</h3>
+                        <p class="info-header-gender">Masculino</p>
+                    </div> <!--info-header-->
+                    <p class="info-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, dolorem magnam, cumque voluptates eos odio iusto ex, at quibusdam in accusamus consequatur quis! Similique modi id quos corporis hic. Repudiandae!</p>
+                    <div class="info-footer">
+                        <span>
+                            6-12 anos
+                        </span>
+                        <p>A partir de R$ <span class="price">599</span><span class="small-number">,99</span></p>
+                    </div>
+                </div> <!--package-info-->
+            </article> <!--package-->
+
+            <article class="package">
+                <img src="./Assets/bike-04.jpg" alt="Bicicleta aro 26" class="package-thumbnail">
+                <div class="package-info">
+                    <div class="info-header">
+                        <h3 class="info-header-title">Bicicleta aro 26</h3>
+                        <p class="info-header-gender">Masculino</p>
+                    </div> <!--info-header-->
+                    <p class="info-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, dolorem magnam, cumque voluptates eos odio iusto ex, at quibusdam in accusamus consequatur quis! Similique modi id quos corporis hic. Repudiandae!</p>
+                    <div class="info-footer">
+                        <span>
+                            12-16 anos
+                        </span>
+                        <p>A partir de R$ <span class="price">649</span><span class="small-number">,99</span></p>
+                    </div>
+                </div> <!--package-info-->
+            </article> <!--package-->
+
+            <article class="package">
+                <img src="./Assets/bike-05.jpg" alt="Bicicleta aro 29" class="package-thumbnail">
+                <div class="package-info">
+                    <div class="info-header">
+                        <h3 class="info-header-title">Bicicleta aro 29</h3>
+                        <p class="info-header-gender">Masculino</p>
+                    </div> <!--info-header-->
+                    <p class="info-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, dolorem magnam, cumque voluptates eos odio iusto ex, at quibusdam in accusamus consequatur quis! Similique modi id quos corporis hic. Repudiandae!</p>
+                    <div class="info-footer">
+                        <span>
+                            Adulto
+                        </span>
+                        <p>A partir de R$ <span class="price">999</span><span class="small-number">,99</span></p>
+                    </div> <!--info-footer-->
+                </div> <!--package-info-->
+            </article> <!--package-->
+        </div> <!--Packages CLASS-->
+    </section> <!--Packages ID-->
+
+    <section id="newsletter">
+        <div class="newsletter-c">
+            <div class="newsletter-info">
+                <h2 class="newsletter-info-title">Quer receber promoções e ofertas exclusivas?</h2>
+                <p class="newsletter-info-description">Cadastre-se para receber nossas newsletters</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="text" placeholder="Seu melhor E-mail" class="newsletter-form-input">
+                <button type="submit" class="newsletter-form-submit">Assinar</button>
+            </form> <!--newsletter-form-->
+        </div> <!--newsletter-c-->
+    </section> <!--newsletter-->
+
+
+    <section id="gallery" class="gallery">
+        <article class="gallery-item">
+            <img src="./Assets/img-01.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 1</h4>
+        </article>
+
+        <article class="gallery-item">
+            <img src="./Assets/img-02.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 2</h4>
+        </article>
+
+        <article class="gallery-item">
+            <img src="./Assets/img-03.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 3</h4>
+        </article>
+
+        <article class="gallery-item">
+            <img src="./Assets/img-04.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 4</h4>
+        </article>
+
+        <article class="gallery-item">
+            <img src="./Assets/img-05.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 5</h4>
+        </article>
+
+        <article class="gallery-item">
+            <img src="./Assets/img-06.jpg" alt="" class="gallery-thumbnail">
+            <h4 class="gallery-text">Bike 6</h4>
+        </article>
+    </section><!--gallery-->
+
+    <footer class="footer">
+        <ul class="footer-list">
+            <li class="footer-item">
+                <a href="#home" class="footer-link">Home</a>
+            </li>
+            <li class="footer-item">
+                <a href="#about" class="footer-link">Sobre Nós</a>
+            </li>
+            <li class="footer-item">
+                <a href="#differentials" class="footer-link">Diferenciais</a>
+            </li>
+            <li class="footer-item">
+                <a href="#packages" class="footer-link">Pacotes</a>
+            </li>
+            <li class="footer-item">
+                <a href="#gallery" class="footer-link">Galeria </a>
+            </li> <!--footer-item-->
+        </ul> <!--footer-list-->
+
+        <ul class="footer-icons">
+            <li>
+                <a href="https://www.whatsapp.com" target="_blank" class="footer-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com" target="_blank" class="footer-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </li>
+        </ul> <!--footer-icons-->
+
+        <p class="copyright">Copyright &copy; Ciclo Peças Alves <span class="date"></span> <span class="direitos">Todos os direitos reservados.</span></p>
+
+    </footer> <!--footer-->
+
+    <div class="modal">
+        <div class="modal-close"><i class="fas fa-times"></i></div>
+
+        <div class="modal-content">
+            <div class="slider">
+                <div class="slider-image">
+                    <div class="slider-number">1 / 6</div>
+                    <img src="./Assets/img-01.jpg" alt="" class="slider-img">
+                </div> <!--slider-image-->
+                <div class="slider-buttons">
+                    <div class="button-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </div> <!--button-left-->
+                    <div class="button-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </div> <!--button-right-->
+                </div> <!--slider-buttons-->
+            </div> <!--slider-->
+            <p class="slider-image-description">Teste de caption</p>
+            <div class="slider-thumbs">
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-01.jpg" alt="">
+                </div>
+
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-02.jpg" alt="">
+                </div>
+
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-03.jpg" alt="">
+                </div>
+
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-04.jpg" alt="">
+                </div>
+
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-05.jpg" alt="">
+                </div>
+
+                <div class="slider-thumbs-img">
+                    <img src="./Assets/img-06.jpg" alt="">
+                </div>
+            </div>
+        </div> <!--modal-content-->
+    </div> <!--modal-->
+
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>
